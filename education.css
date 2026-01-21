@@ -1,0 +1,97 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf9f6; /* cream / putih susu */
+    color: #3b0d0d;
+}
+
+.education-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    /* background-color: #ffffff; */ /* buang kotak putih */
+    border-radius: 0; /* tiada bulatan sudut */
+    box-shadow: none; /* hilangkan bayang */
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #7b1b1b;
+}
+
+.intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Education table */
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.education-table th, .education-table td {
+    padding: 15px;
+    border-bottom: 1px solid #7b1b1b;
+    text-align: left;
+    font-size: 16px;
+}
+
+.education-table th {
+    background-color: #a32a2a;
+    color: white;
+}
+
+/* Social Links */
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.social-links .icons a {
+    margin: 0 15px;
+    font-size: 36px;
+    color: #7b1b1b;
+    transition: 0.3s;
+}
+
+.social-links .icons a:hover {
+    color: #a32a2a;
+    transform: scale(1.2);
+}
+
+/* Back to homepage */
+.back-home {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-home a {
+    text-decoration: none;
+    color: #7b1b1b;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.back-home a:hover {
+    text-decoration: underline;
+    color: #a32a2a;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .education-table th, .education-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

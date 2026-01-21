@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSNetwork | Travel</title>
+<link rel="stylesheet" href="travel.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="travel-container">
+    <h1>Explore Travel Destinations</h1>
+    <p class="intro">Click on the image to explore more about the destination on Google Travel.</p>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <button class="prev">&#10094;</button>
+
+        <a href="https://search.yahoo.com/search?fr=mcafee&type=E210US1485G0&p=indonesia+travel" target="_blank" class="slide">
+            <img src="assets/indonesia.jpg" alt="Indonesia">
+            <h3>Indonesia</h3>
+        </a>
+
+        <a href="https://search.yahoo.com/search?fr=mcafee&type=E210US1485G0&p=thailand+travel" target="_blank" class="slide">
+            <img src="assets/thailand.jpg" alt="Thailand">
+            <h3>Thailand</h3>
+        </a>
+
+        <a href="https://search.yahoo.com/search?fr=mcafee&type=E210US1485G0&p=japan+travel" target="_blank" class="slide">
+            <img src="assets/japan.jpg" alt="Japan">
+            <h3>Japan</h3>
+        </a>
+
+        <a href="https://search.yahoo.com/search?fr=mcafee&type=E210US1485G0&p=europe+travel" target="_blank" class="slide">
+            <img src="assets/europe.jpg" alt="Europe">
+            <h3>Europe</h3>
+        </a>
+
+        <a href="https://search.yahoo.com/search?fr=mcafee&type=E210US1485G0&p=usa+travel" target="_blank" class="slide">
+            <img src="assets/usa.jpg" alt="USA">
+            <h3>USA</h3>
+        </a>
+
+        <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <section class="social-links">
+        <h2>Follow Travel Communities</h2>
+        <div class="icons">
+            <a href="https://x.com/travel" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/explore/tags/travel/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/tag/travel" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </section>
+
+</div>
+
+<!-- Back to homepage -->
+<div class="back-home">
+    <a href="homepage.html">← Back to Homepage</a>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function showSlide(i) {
+    slides.forEach((slide, idx) => {
+        slide.style.display = (idx === i) ? 'block' : 'none';
+    });
+}
+
+// Initialize first slide
+showSlide(index);
+
+document.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+});
+</script>
+
+</body>
+</html>

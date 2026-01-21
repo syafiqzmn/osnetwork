@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSNetwork | Home</title>
+<link rel="stylesheet" href="homepage.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-left">
+        <span class="logo-text">OSNetwork</span> | 
+        <span id="date-time"></span>
+    </div>
+    <div class="header-right">
+        <input type="text" id="search" placeholder="Search community (8)" />
+        <button id="search-btn">Search</button>
+    </div>
+</header>
+
+<div class="homepage-container">
+    
+    <!-- Greeting -->
+    <div class="greeting">
+        <h1>Hi, <span id="nickname-placeholder">User</span>!</h1>
+        <p>Find your community and explore content from TikTok, Facebook, Twitter, & Instagram!</p>
+    </div>
+
+    <!-- Categories (4x2 grid) -->
+    <div class="categories">
+        <a href="sport.html" class="category-card">
+            <img src="sport.gif" alt="Sport">
+            <h3>Sport</h3>
+            <p>Explore sports communities and their latest TikTok & Instagram content.</p>
+        </a>
+
+        <a href="education.html" class="category-card">
+            <img src="education.gif" alt="Education">
+            <h3>Education</h3>
+            <p>Join learning communities and discover educational TikTok & Instagram content.</p>
+        </a>
+
+        <a href="gaming.html" class="category-card">
+            <img src="gaming.gif" alt="Gaming">
+            <h3>Gaming</h3>
+            <p>Discover gaming communities, highlights, and trends.</p>
+        </a>
+
+        <a href="travel.html" class="category-card">
+            <img src="travel.gif" alt="Travel">
+            <h3>Travel</h3>
+            <p>Explore travel communities and discover amazing TikTok & Instagram Reels.</p>
+        </a>
+
+        <a href="food.html" class="category-card">
+            <img src="food.gif" alt="Food">
+            <h3>Food / Cooking</h3>
+            <p>Explore recipes, cooking tips, and food lovers’ communities.</p>
+        </a>
+
+        <a href="fashion.html" class="category-card">
+            <img src="fashion.gif" alt="Fashion">
+            <h3>Fashion</h3>
+            <p>Discover global fashion trends and watch videos to get inspired by the latest styles.</p>
+        </a>
+
+        <a href="animals.html" class="category-card">
+            <img src="animal.gif" alt="Animals">
+            <h3>Animals</h3>
+            <p>Explore wildlife, learn about different species, and enjoy a scrolling animal gallery.</p>
+        </a>
+
+        <a href="music.html" class="category-card">
+            <img src="music.gif" alt="Music">
+            <h3>Music</h3>
+            <p>Discover music communities, playlists, and trends.</p>
+        </a>
+    </div>
+
+<!-- Get Out & Contact -->
+<div class="get-out">
+    <a href="contact.html">Contact Us!</a>
+    <span class="divider"> | </span>
+    <a href="index.html">Get Out</a>
+</div>
+
+</div>
+
+<script>
+    // Display nickname from localStorage
+    const nicknameSpan = document.getElementById('nickname-placeholder');
+    const storedName = localStorage.getItem('nickname');
+    if(storedName){
+        nicknameSpan.textContent = storedName;
+    }
+
+    // Update date & time
+    function updateDateTime(){
+        const dtSpan = document.getElementById('date-time');
+        const now = new Date();
+        dtSpan.textContent = now.toLocaleString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Categories mapping for search
+    const categories = {
+        "sport": "sport.html",
+        "education": "education.html",
+        "gaming": "gaming.html",
+        "travel": "travel.html",
+        "food": "food.html",
+        "fashion": "fashion.html",
+        "animals": "animals.html",
+        "music": "music.html"
+    };
+
+    // Search function
+    function performSearch() {
+        const query = document.getElementById('search').value.trim().toLowerCase();
+        if(query in categories){
+            window.location.href = categories[query];
+        } else {
+            alert("Community Not Found!");
+        }
+    }
+
+    // Event: click button
+    document.getElementById('search-btn').addEventListener('click', performSearch);
+
+    // Event: enter key press
+    document.getElementById('search').addEventListener('keydown', function(e){
+        if(e.key === 'Enter'){
+            e.preventDefault();
+            performSearch();
+        }
+    });
+</script>
+
+</body>
+</html>
